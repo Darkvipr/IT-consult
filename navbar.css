@@ -1,0 +1,334 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@300;400;700&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    overflow-x: hidden;
+}
+
+/* Top Bar */
+.top-bar {
+    background: #f4f4f4;
+    padding: 5px 20px;
+    text-align: right;
+    font-size: 12px;
+    color: #333;
+}
+
+.top-bar a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: #0056b3;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 60px;
+}
+
+/* Logo */
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    font-size: 14px;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    top: 100%;
+    left: 0;
+    padding: 5px 0;
+    border-radius: 5px;
+    z-index: 1001;
+}
+
+.dropdown-menu li {
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+.dropdown a::after {
+    content: " ▼";
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Contact Button */
+.contact {
+    background: #f5d02a;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+    transition: background-color 0.3s ease;
+}
+
+.contact:hover {
+    background: #e0b923;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #005eb8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-content {
+    max-width: 50%;
+    position: relative;
+    margin-left: -30px;
+}
+
+.hero-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: 1.7rem;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.talk {
+    background-color: #f5d02a;
+    color: black;
+}
+
+.talk:hover {
+    background-color: #e0b923;
+}
+
+.quote {
+    background-color: #005eb8;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.quote:hover {
+    background-color: #ffffff;
+    color: #005eb8;
+}
+
+.hero-animation {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.hero-animation img {
+    max-width: 75%;
+    height: auto;
+}
+
+/* 📵 Small Mobile Screens (575px and below) */
+@media screen and (max-width: 575px) {
+    .navbar {
+        height: 45px;
+        padding: 8px 12px;
+    }
+
+    .logo img {
+        width: 35px;
+    }
+
+    .hamburger {
+        display: block;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 5px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        margin-left: 0;
+        margin-bottom: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .hero-animation {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-animation img {
+        max-width: 90%;
+    }
+
+    .top-bar {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+}
+
+/* 🎯 Fix for "Here" Section - Ensure Text is Above Image on Small Screens */
+@media screen and (max-width: 767px) {
+    .here-section {
+        display: flex;
+        flex-direction: column-reverse; /* Moves image below text */
+        align-items: center;
+        text-align: center;
+    }
+
+    .here-text {
+        order: 1; /* Ensures text stays on top */
+    }
+
+    .here-image {
+        order: 2; /* Moves image below */
+    }
+}

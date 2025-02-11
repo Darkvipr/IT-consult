@@ -1,0 +1,121 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.services-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    gap: 20px; /* Space between cards */
+    flex-direction: row;
+}
+
+.service-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row with gap */
+    min-width: 300px; /* Minimum width for responsiveness */
+}
+
+.service-header {
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.service-header:hover {
+    background: #e9ecef;
+}
+
+.service-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+.service-icon {
+    width: 30px;
+    height: 30px;
+    background: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.arrow {
+    transition: transform 0.3s;
+}
+
+.arrow.active {
+    transform: rotate(180deg);
+}
+
+.service-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.service-content.active {
+    max-height: 1000px; /* Arbitrary large value to allow expansion */
+}
+
+.service-items {
+    padding: 20px;
+}
+
+.service-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+.service-item:last-child {
+    border-bottom: none;
+}
+
+.tap-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.tap-button:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .service-header {
+        padding: 15px;
+    }
+
+    .service-items {
+        padding: 15px;
+    }
+
+    .service-card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        flex: 1 1 100%; /* 1 card per row on very small screens */
+    }
+}

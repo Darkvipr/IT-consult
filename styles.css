@@ -1,0 +1,419 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f7f6;
+    --text-color: #2c3e50;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+.quantum-contact-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--background-color) 0%, #e0e4e6 100%);
+    padding: 2rem;
+}
+
+.quantum-contact-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px var(--shadow-color);
+    overflow: hidden;
+    animation: subtle-float 3s infinite alternate ease-in-out;
+}
+
+.quantum-contact-info {
+    flex: 1;
+    background: var(--primary-color);
+    color: white;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.quantum-contact-info::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(-45deg);
+    z-index: 1;
+}
+
+.quantum-contact-form {
+    flex: 1.5;
+    padding: 3rem;
+    background: white;
+}
+
+.quantum-form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.quantum-input-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.quantum-input-field:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+.quantum-submit-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.quantum-submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.quantum-error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.quantum-contact-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+.quantum-social-icon {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.quantum-social-icon:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+@keyframes subtle-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+
+
+
+
+
+
+/* Base styles to add */
+.quantum-contact-wrapper {
+    min-height: auto; /* Remove fixed height */
+    padding: 3rem 0; /* Add consistent padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantum-contact-container {
+    margin: 0 auto; /* Center the container */
+    width: 90%;
+    max-width: 1200px;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .quantum-contact-wrapper {
+        padding: 2.5rem 0;
+    }
+    
+    .quantum-contact-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+    
+    .quantum-contact-info,
+    .quantum-contact-form {
+        padding: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .quantum-contact-wrapper {
+        padding: 2rem 0;
+    }
+    
+    .quantum-contact-container {
+        flex-direction: column;
+        animation: none;
+        margin: 0 auto;
+    }
+    
+    .quantum-contact-info {
+        padding: 2rem;
+        text-align: center;
+    }
+    
+    .quantum-contact-info::before {
+        display: none;
+    }
+    
+    .quantum-contact-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .quantum-contact-wrapper {
+        padding: 1.5rem 0;
+    }
+    
+    .quantum-contact-container {
+        width: 100%;
+        border-radius: 12px;
+        margin: 0;
+    }
+    
+    .quantum-contact-info,
+    .quantum-contact-form {
+        padding: 1.5rem;
+    }
+    
+    .quantum-form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .quantum-input-field {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .quantum-submit-btn {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    .quantum-social-icon {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .quantum-contact-wrapper {
+        padding: 1rem 0;
+    }
+    
+    .quantum-contact-info h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .quantum-contact-info p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
+    .quantum-contact-form h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    
+    .quantum-input-field {
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .quantum-submit-btn {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Mobile landscape orientation adjustment */
+@media (max-height: 500px) and (orientation: landscape) {
+    .quantum-contact-wrapper {
+        padding: 2rem 0;
+        min-height: auto;
+    }
+    
+    .quantum-contact-container {
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-background: #1f2937;
+    --light-text: #f3f4f6;
+    --accent-color: #6366f1;
+}
+
+
+
+
+.quantum-footer-container {
+    background: var(--dark-background);
+    color: var(--light-text);
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.quantum-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.quantum-footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.quantum-footer-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quantum-footer-link {
+    color: var(--light-text);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantum-footer-link:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.quantum-social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.quantum-social-icon {
+    color: var(--light-text);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.quantum-social-icon:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2) rotate(10deg);
+}
+
+.quantum-newsletter {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.quantum-newsletter-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.quantum-newsletter-btn {
+    background: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.quantum-newsletter-btn:hover {
+    background: var(--accent-color);
+}
+
+.quantum-footer-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        135deg, 
+        rgba(31, 41, 55, 0.9), 
+        rgba(31, 41, 55, 0.7)
+    );
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    z-index: 1;
+}
+
+.quantum-footer-copyright {
+    text-align: center;
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.quantum-particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: particle-float 5s infinite alternate;
+}
+
+@keyframes particle-float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50px); }
+}
+
+@media (max-width: 768px) {
+    .quantum-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}

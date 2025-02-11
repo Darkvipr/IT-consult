@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="about.css">
+        <link rel="stylesheet" href="navbar.css">
+        <link rel="stylesheet" href="service.css">
+        <script src="navbar.js"></script>
+        <script src="service.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+        <script src="https://kit.fontawesome.com/9fdef60c69.js" crossorigin="anonymous"></script>
+        <script defer src="script.js"></script>
+    </head>
+<style>
+:root {
+    --primary: #6d28d9;
+    --secondary: #7c3aed;
+    --text: #1f2937;
+    --light: #f3f4f6;
+    --accent: #ddd6fe;
+}
+
+.cta-section {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 3rem;
+            background: #2c3e50;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #2980b9;
+        }
+
+.page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.creative-hero {
+    position: relative;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 0px;
+    margin-bottom: 4rem;
+    overflow: hidden;
+}
+
+.creative-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+}
+
+.hero-heading {
+    color: white;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.hero-subtext {
+    color: var(--light);
+    font-size: 1.5rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.service-box {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.service-box:hover::before {
+    width: 100%;
+    opacity: 0.1;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+}
+
+.service-heading {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.service-icon {
+    font-size: 2rem;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-feature {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--accent);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.service-feature:last-child {
+    border-bottom: none;
+}
+
+.service-feature:hover {
+    color: var(--primary);
+    transform: translateX(10px);
+}
+
+.service-feature::before {
+    content: '✦';
+    color: var(--primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-feature:hover::before {
+    opacity: 1;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-btn:hover {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.floating-icon {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 4rem;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@media (max-width: 768px) {
+    .hero-heading {
+        font-size: 2.5rem;
+    }
+    .hero-subtext {
+        font-size: 1.2rem;
+    }
+    .service-box {
+        margin: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+        <!-- Top Bar -->
+     <div class="top-bar">
+        <span>
+            <a href="https://twitter.com/Think-Tap Inc " target="_blank">Twitter</a>
+        </span>
+        <span> | </span>
+        <span>
+            <a href="https://facebook.com/thinktap_research " target="_blank">Facebook</a>
+        </span>
+        <span> | </span>
+        <span>+233059370 5374, +2330592219725, +447513246760</span>
+        <span> | </span>
+        <span>thinktapresearch@gmail.com</span>
+    </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/project img/IMG_3168.JPG" alt="IT Consult Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-menu">
+                   
+                    <li><a href="/brand.html">Brand Promotion and creative designs </a></li>
+                    <li><a href="/IT.html">IT Solutions</a></li>
+                    <li><a href="/write.html">Creative Write-ups and Design</a></li>
+                    <li><a href="/assig.html">Assignment Guidance</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/industries.html">Industries</a>
+                
+            </li>
+            
+            <li>
+                <a href="/tech.html">Technologies</a>
+                
+            </li>
+            <li><a href="contact.html#contact-section" class="contact">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 >RESEARCH CONSULTANCY <br> </h1>
+            <p style="font-style: normal;">Your Partner for Digital Success</p>
+            <p style="line-height: 20px; font-size: 13px; font-style: italic; color: rgb(255, 255, 255);">Research consultancy services encompass methodologies designed to ensure seamless research workflows and optimize resource utilization. With 8 years of expertise in data analysis, strategic insights, and research support, Think-Tap Research Incorporated delivers continuous enhancement of your research processes.</p>
+            <div class="buttons">
+                <a href="index.html#contact-section">
+                    <button class="btn talk">Talk to our team</button>
+                </a>
+                
+                <a href="index.html#contact-section">
+                    <button class="btn quote">Get a quote</button>
+                </a>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <img src="/images/Online learning-rafiki.png" alt="Digital Transformation Animation">
+        </div>
+    
+    </section>
+
+
+<div class="page-container">
+    <section class="creative-hero">
+        <div class="floating-icon">✒️</div>
+        <h1 class="hero-heading">Creative Writing & Designs</h1>
+        <p class="hero-subtext">We offer professional writing services and design solutions to bring creative visions to life. Our services cater to individuals and businesses seeking high-quality, original content and visually compelling designs.</p>
+        <a href="#contact" class="cta-btn">Start Your Creative Journey</a>
+    </section>
+
+    <div class="services-container">
+        <div class="service-box">
+            <h2 class="service-heading">
+                <span class="service-icon">📚</span>
+                Fiction
+            </h2>
+            <ul class="service-features">
+                <li class="service-feature">Short Stories</li>
+                <li class="service-feature">Novels</li>
+                <li class="service-feature">Children's Books</li>
+                <li class="service-feature">Fantasy & Sci-Fi</li>
+                <li class="service-feature">Mystery & Thriller</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h2 class="service-heading">
+                <span class="service-icon">📰</span>
+                Non-Fiction
+            </h2>
+            <ul class="service-features">
+                <li class="service-feature">Research Articles</li>
+                <li class="service-feature">Academic Papers</li>
+                <li class="service-feature">Biographies</li>
+                <li class="service-feature">Technical Writing</li>
+                <li class="service-feature">Business Reports</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h2 class="service-heading">
+                <span class="service-icon">🎭</span>
+                Poetry
+            </h2>
+            <ul class="service-features">
+                <li class="service-feature">Classical Poetry</li>
+                <li class="service-feature">Modern Verse</li>
+                <li class="service-feature">Themed Collections</li>
+                <li class="service-feature">Occasional Poetry</li>
+                <li class="service-feature">Spoken Word</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h2 class="service-heading">
+                <span class="service-icon">🎬</span>
+                Script Writing
+            </h2>
+            <ul class="service-features">
+                <li class="service-feature">Film Scripts</li>
+                <li class="service-feature">TV Shows</li>
+                <li class="service-feature">Theater Plays</li>
+                <li class="service-feature">Web Series</li>
+                <li class="service-feature">Commercial Scripts</li>
+            </ul>
+        </div>
+
+        <div class="service-box">
+            <h2 class="service-heading">
+                <span class="service-icon">💻</span>
+                Content Writing
+            </h2>
+            <ul class="service-features">
+                <li class="service-feature">Website Content</li>
+                <li class="service-feature">Blog Posts</li>
+                <li class="service-feature">SEO Articles</li>
+                <li class="service-feature">Marketing Copy</li>
+                <li class="service-feature">Social Media Content</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div class="cta-section">
+    <h2>Ready to Transform Your Research?</h2>
+    <p>Partner with Think-Tap Research Inc. for industry-leading insights and innovation.</p>
+    <a href="#contact" class="cta-button">Contact Us Today</a>
+</div>
+<footer class="quantum-footer-container">
+    <div class="quantum-footer-background"></div>
+    
+    <!-- Decorative Particles -->
+    <div class="quantum-particle" style="top: 10%; left: 5%; width: 50px; height: 50px;"></div>
+    <div class="quantum-particle" style="top: 50%; right: 10%; width: 30px; height: 30px;"></div>
+    <div class="quantum-particle" style="bottom: 20%; left: 15%; width: 40px; height: 40px;"></div>
+
+    <div class="quantum-footer-grid">
+        <!-- Company Info Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Think-Tap Research Incorporated</h3>
+            <p>Innovating technology with passion and precision. Transforming ideas into digital realities.</p>
+            <div class="quantum-social-links">
+                <a href="#" class="quantum-social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Quick Links</h3>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Home
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Services
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Portfolio
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Contact
+            </a>
+        </div>
+
+        <!-- Services Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Our Services</h3>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> CREATIVE WRITING AND DESIGNS
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Brand Promotion and Creative Designs
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> IT Solutions
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Corporate Research Services
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> RESEARCH CONSULTANCY
+            </a>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Stay Updated</h3>
+            <p>Subscribe to our newsletter for the latest tech insights.</p>
+            <form class="quantum-newsletter">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="quantum-newsletter-input" 
+                    required
+                >
+                <button type="submit" class="quantum-newsletter-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="quantum-footer-copyright">
+        © 2025 Think-Tap  Research Incorporated. All Rights Reserved. 
+        <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Privacy Policy</a>
+        <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Terms of Service</a>
+    </div>
+</footer>
+
+</body>
+</html>

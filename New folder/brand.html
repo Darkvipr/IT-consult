@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>IT Consulting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="service.css">
+    <script src="navbar.js"></script>
+    <script src="service.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fdef60c69.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+     <!-- Top Bar -->
+     <div class="top-bar">
+        <span>
+            <a href="https://twitter.com/Think-Tap Inc " target="_blank">Twitter</a>
+        </span>
+        <span> | </span>
+        <span>
+            <a href="https://facebook.com/thinktap_research " target="_blank">Facebook</a>
+        </span>
+        <span> | </span>
+        <span>+233059370 5374, +2330592219725, +447513246760</span>
+        <span> | </span>
+        <span>thinktapresearch@gmail.com</span>
+    </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/project img/IMG_3168.JPG" alt="IT Consult Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/research.con.html">Research Consultancy </a></li>
+                    
+                    <li><a href="/IT.html">IT Solutions</a></li>
+                    <li><a href="/write.html">Creative Write-ups and Design</a></li>
+                    <li><a href="/assig.html">Assignment Guidance</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">Industries</a>
+                <ul class="dropdown-menu">
+                    <li><a href="industries1.html">Industry 1</a></li>
+                    <li><a href="industries2.html">Industry 2</a></li>
+                </ul>
+            </li>
+           
+            <li >
+                <a href="/tech.html">Technologies</a>
+                
+            </li>
+            <li><a href="contact.html#contact-section" class="contact">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 >Brand Promotion and Creative Designs <br> </h1>
+            <p style="font-style: normal;">Your Partner for Digital Success</p>
+            <p style="line-height: 20px; font-size: 13px; font-style: italic; color: rgb(255, 255, 255);">Brand promotion and creative design services are aimed at enhancing your brand's visibility and identity in the marketplace. Our comprehensive offerings include developing compelling branding strategies, creating visually striking designs, and executing promotional campaigns that resonate with your target audience. From crafting a strong corporate identity to designing engaging marketing materials, we ensure that your brand stands out and effectively communicates its values and message.</p>
+            <div class="buttons">
+                <a href="index.html#contact-section">
+                    <button class="btn talk">Talk to our team</button>
+                </a>
+                
+                <a href="index.html#contact-section">
+                    <button class="btn quote">Get a quote</button>
+                </a>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <img src="/images/Online learning-bro.png" alt="Digital Transformation Animation">
+        </div>
+    
+    </section>
+
+
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="floating-dots"></div>
+    </div>
+    <section class="title-section">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="title-container">
+            <h1 class="main-title">Our Creative Services</h1>
+            <div class="accent-line"></div>
+            <p class="subtitle">Transform your brand with our innovative solutions in design, promotion, and creative strategy</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="services-grid">
+            <!-- Corporate Branding Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-building"></i> 
+                </div>
+                <h3>Corporate Branding</h3>
+                <p>Establish a powerful corporate identity that resonates with your audience.</p>
+                <ul class="features-list">
+                    <li>Brand Strategy Development</li>
+                    <li>Visual Identity Systems</li>
+                    <li>Brand Guidelines</li>
+                    <li>Brand Voice & Messaging</li>
+                </ul>
+            </div>
+
+            <!-- Promotional Branding Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-bullhorn"></i>
+                </div>
+                <h3>Promotional Branding</h3>
+                <p>Create impactful campaigns that drive engagement and results.</p>
+                <ul class="features-list">
+                    <li>Campaign Strategy</li>
+                    <li>Marketing Collateral</li>
+                    <li>Digital Campaigns</li>
+                    <li>Social Media Branding</li>
+                </ul>
+            </div>
+
+            <!-- Logo Design Card -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>Logo & Visual Identity</h3>
+                <p>Design memorable logos and cohesive visual systems.</p>
+                <ul class="features-list">
+                    <li>Logo Design & Concepts</li>
+                    <li>Visual Style Guides</li>
+                    <li>Brand Asset Creation</li>
+                    <li>Identity Applications</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   
+    <footer class="quantum-footer-container">
+        <div class="quantum-footer-background"></div>
+        
+        <!-- Decorative Particles -->
+        <div class="quantum-particle" style="top: 10%; left: 5%; width: 50px; height: 50px;"></div>
+        <div class="quantum-particle" style="top: 50%; right: 10%; width: 30px; height: 30px;"></div>
+        <div class="quantum-particle" style="bottom: 20%; left: 15%; width: 40px; height: 40px;"></div>
+
+        <div class="quantum-footer-grid">
+            <!-- Company Info Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Think-Tap Research Incorporated</h3>
+                <p>Innovating technology with passion and precision. Transforming ideas into digital realities.</p>
+                <div class="quantum-social-links">
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Quick Links</h3>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Home
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Services
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Portfolio
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Contact
+                </a>
+            </div>
+
+            <!-- Services Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Our Services</h3>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> CREATIVE WRITING AND DESIGNS
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Brand Promotion and Creative Designs
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> IT Solutions
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Corporate Research Services
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> RESEARCH CONSULTANCY
+                </a>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest tech insights.</p>
+                <form class="quantum-newsletter">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="quantum-newsletter-input" 
+                        required
+                    >
+                    <button type="submit" class="quantum-newsletter-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="quantum-footer-copyright">
+            © 2025 Think-Tap  Research Incorporated. All Rights Reserved. 
+            <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Privacy Policy</a>
+            <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Terms of Service</a>
+        </div>
+    </footer>
+
+
+    <style>
+    
+    .title-section {
+            min-height: 50vh;
+            background: linear-gradient(135deg, #3a9cd1, #60e6a3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 1rem;
+        }
+
+        .title-container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title {
+            font-size: 4rem;
+            font-weight: 800;
+            color: transparent;
+            background: linear-gradient(45deg, #ff3366, #ff6b6b, #ffd3d3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            position: relative;
+            animation: titleAppear 1s ease-out forwards;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #ffffff99;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.5s forwards;
+        }
+
+        .accent-line {
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff3366, #ff6b6b);
+            margin: 2rem auto;
+            position: relative;
+            border-radius: 2px;
+            opacity: 0;
+            animation: lineExtend 1s ease-out 0.3s forwards;
+        }
+
+        .accent-line::before,
+        .accent-line::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ff3366;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .accent-line::before {
+            left: -4px;
+        }
+
+        .accent-line::after {
+            right: -4px;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+            animation: float 15s infinite linear;
+        }
+
+        .shape:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #ff3366;
+            transform: rotate(45deg);
+        }
+
+        .shape:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid #ff6b6b;
+        }
+
+        .shape:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            width: 35px;
+            height: 35px;
+            border: 2px solid #ffd3d3;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        @keyframes titleAppear {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes lineExtend {
+            from {
+                transform: scaleX(0);
+                opacity: 0;
+            }
+            to {
+                transform: scaleX(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            50% {
+                transform: translate(20px, 20px) rotate(180deg);
+            }
+            100% {
+                transform: translate(0, 0) rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #ffffff, #ffffff);
+            border-radius: 5px;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #ffffff 0%, #dbdbdb 100%);
+            opacity: 0.8;
+        }
+
+        .floating-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#ffffff33 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: floatingDots 20s linear infinite;
+        }
+
+        @keyframes floatingDots {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50px); }
+        }
+
+       
+        @keyframes titleGlow {
+            from { text-shadow: 0 0 20px rgba(255, 51, 102, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 51, 102, 0.8); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 2rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            opacity: 0;
+            transition: 0.3s;
+            z-index: -1;
+        }
+
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 51, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 51, 102, 0); }
+        }
+
+        /* Creative Features List */
+        .features-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .features-list li {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .features-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #ff3366;
+        }
+
+        .features-list li:hover {
+            opacity: 1;
+            transform: translateX(10px);
+        }
+
+       
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</body>
+</html>

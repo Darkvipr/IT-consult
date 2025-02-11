@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="service.css">
+    <script src="navbar.js"></script>
+    <script src="service.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fdef60c69.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+    <meta charset="UTF-8">
+    <style>
+.tech-solutions {
+            max-width: 1400px;
+            margin: -4rem auto 0;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            padding: 2rem;
+            background: var(--dark);
+            color: rgb(27, 26, 26);
+            text-align: center;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 1.5rem 0;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--secondary);
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .expertise {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .expertise-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .expertise-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .expertise-item {
+            padding: 2rem;
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .stats {
+            background: var(--dark);
+            color: rgb(32, 120, 164);
+            padding: 5rem 2rem;
+        }
+
+        .stats-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h4 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+
+
+
+
+        /* Updated CSS with Prison Break themes */
+        :root {
+            --fox-river-blue: #c2d8e4;
+            --scofield-smart: #c8ebe4;
+            --company-orange: #f97316;
+            --t-bag-danger: #dc2626;
+            --sucre-loyal: #e5eae8;
+            --dark-ops: #1e293b;
+            --light-cell: #f8fafc;
+        }
+
+        /* Michael's Blueprint Section */
+        .scofield-blueprint {
+            background: linear-gradient(135deg, var(--fox-river-blue) 0%, var(--scofield-smart) 100%);
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .blueprint-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+
+        .blueprint-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Lincoln's Protection Section */
+        .burrows-protection {
+            background: var(--dark-ops);
+            color: var(--light-cell);
+            padding: 4rem 2rem;
+        }
+
+        .protection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .security-layer {
+            border-left: 4px solid var(--company-orange);
+            padding: 1.5rem;
+        }
+
+        /* T-Bag's Innovation Section */
+        .tbag-innovation {
+            background: var(--light-cell);
+            padding: 4rem 2rem;
+        }
+
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .innovation-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .innovation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--t-bag-danger);
+        }
+
+        /* Sara's Care Section */
+        .tancredi-care {
+            background: var(--sucre-loyal);
+            color: rgb(59, 197, 235);
+            padding: 4rem 2rem;
+        }
+
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Add more Prison Break themed styles below */
+    </style>
+</head>
+<body>
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <span>
+                <a href="https://twitter.com/Think-Tap Inc " target="_blank">Twitter</a>
+            </span>
+            <span> | </span>
+            <span>
+                <a href="https://facebook.com/thinktap_research " target="_blank">Facebook</a>
+            </span>
+            <span> | </span>
+            <span>+233059370 5374, +2330592219725, +447513246760</span>
+            <span> | </span>
+            <span>thinktapresearch@gmail.com</span>
+        </div>
+        
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="/images/project img/IMG_3168.JPG" alt="IT Consult Logo">
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a href="/about.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/research.con.html">Research Consultancy </a></li>
+                        <li><a href="/brand.html">Brand Promotion and creative designs </a></li>
+                        <li><a href="/IT.html">IT Solutions</a></li>
+                        <li><a href="/write.html">Creative Write-ups and Design</a></li>
+                        <li><a href="/assig.html">Assignment Guidance</a></li>
+                    </ul>
+                </li>
+                <li >
+                    <a href="/industries.html">Industries</a>
+                    
+                </li>
+                
+                <li >
+                    <a href="/tech.html">Technologies</a>
+                    
+                </li>
+                <li><a href="contact.html#contact-section" class="contact">Contact Us</a></li>
+
+            </ul>
+        </nav>
+    
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 >Think-Tap Research Incorporated <br> </h1>
+                <p style="font-style: normal;">Your Partner for Digital Success</p>
+                <p style="line-height: 20px; font-size: 13px; font-style: italic; color: rgb(255, 255, 255);">We specialize in academic research consultancy, offering guidance from diploma projects to PhD thesis development and networking and security management, web development, IT system monitoring, remote server administration, software development, and database management.</p>
+                <div class="buttons">
+                    <a href="index.html#contact-section">
+                        <button class="btn talk">Talk to our team</button>
+                    </a>
+                    
+                    <a href="index.html#contact-section">
+                        <button class="btn quote">Get a quote</button>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-animation">
+                <img src="/images/Online learning-amico.png" alt="Digital Transformation Animation">
+            </div>
+        
+        </section>
+
+        <section class="tech-solutions" id="solutions">
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="card-header">
+                        <div class="card-icon">💻</div>
+                        <h3>Custom Software Development</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="features-list">
+                            <li>Enterprise Software Solutions</li>
+                            <li>Web & Mobile Applications</li>
+                            <li>Legacy System Modernization</li>
+                            <li>API Development & Integration</li>
+                            <li>DevOps Implementation</li>
+                        </ul>
+                       
+                    </div>
+                </div>
+    
+        <div class="solution-card">
+            <div class="card-header">
+                <div class="card-icon">🤖</div>
+                <h3>AI & Machine Learning</h3>
+            </div>
+            <div class="card-content">
+                <ul class="features-list">
+                    <li>Predictive Analytics</li>
+                    <li>Natural Language Processing</li>
+                    <li>Computer Vision Solutions</li>
+                    <li>Process Automation</li>
+                    <li>AI-Powered Business Intelligence</li>
+                </ul>
+               
+            </div>
+        </div>
+        
+        <div class="solution-card">
+            <div class="card-header">
+                <div class="card-icon">☁️</div>
+                <h3>Cloud Services</h3>
+            </div>
+            <div class="card-content">
+                <ul class="features-list">
+                    <li>Cloud Migration Strategy</li>
+                    <li>Cloud-Native Development</li>
+                    <li>Multi-Cloud Management</li>
+                    <li>Cloud Security Solutions</li>
+                    <li>Cloud Optimization Services</li>
+                </ul>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="expertise" id="expertise">
+    <div class="expertise-content">
+        <div class="expertise-header">
+            <h2>Our Technical Expertise</h2>
+        </div>
+        <div class="expertise-grid">
+            <div class="expertise-item">
+                <div class="expertise-icon">🔒</div>
+                <h3>Cybersecurity</h3>
+                <p>Enterprise-grade security solutions and compliance</p>
+            </div>
+            <div class="expertise-item">
+                <div class="expertise-icon">📊</div>
+                <h3>Data Analytics</h3>
+                <p>Advanced analytics and business intelligence</p>
+            </div>
+            <div class="expertise-item">
+                <div class="expertise-icon">🌐</div>
+                <h3>IoT Solutions</h3>
+                <p>Connected device ecosystems and management</p>
+            </div>
+            <div class="expertise-item">
+                <div class="expertise-icon">📱</div>
+                <h3>Mobile Development</h3>
+                <p>Native and cross-platform solutions</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stats-content">
+        <div class="stat-item">
+            <h4>30+</h4>
+            <p>Years in IT</p>
+        </div>
+        <div class="stat-item">
+            <h4>2500+</h4>
+            <p>Projects Delivered</p>
+        </div>
+        <div class="stat-item">
+            <h4>250+</h4>
+            <p>Technical Experts</p>
+        </div>
+        <div class="stat-item">
+            <h4>40+</h4>
+            <p>Countries Served</p>
+        </div>
+    </div>
+</section>           
+
+
+
+
+    <!-- Add these new sections after the stats section -->
+    
+    <section class="scofield-blueprint">
+        <div class="blueprint-grid">
+            <div class="blueprint-card">
+                <h3>Digital Transformation Blueprint</h3>
+                <p>Meticulously planned technology roadmaps</p>
+                <ul>
+                    <li>Process automation strategies</li>
+                    <li>Cloud migration planning</li>
+                    <li>Legacy system modernization</li>
+                </ul>
+            </div>
+            <div class="blueprint-card">
+                <h3>Security Architecture Plan</h3>
+                <p>Enterprise-grade protection strategies</p>
+                <ul>
+                    <li>Zero-trust implementation</li>
+                    <li>Compliance frameworks</li>
+                    <li>Threat detection systems</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="burrows-protection">
+        <div class="protection-grid">
+            <div class="security-layer">
+                <h3>Network Security</h3>
+                <p>Advanced firewall protection and intrusion detection</p>
+            </div>
+            <div class="security-layer">
+                <h3>Data Encryption</h3>
+                <p>End-to-end encryption for sensitive information</p>
+            </div>
+            <div class="security-layer">
+                <h3>Access Control</h3>
+                <p>Multi-factor authentication systems</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tbag-innovation">
+        <div class="innovation-grid">
+            <div class="innovation-card">
+                <h3>AI-Powered Analytics</h3>
+                <p>Machine learning-driven business insights</p>
+            </div>
+            <div class="innovation-card">
+                <h3>Blockchain Solutions</h3>
+                <p>Secure decentralized transaction systems</p>
+            </div>
+            <div class="innovation-card">
+                <h3>Quantum Computing Research</h3>
+                <p>Next-generation computing solutions</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tancredi-care">
+        <div class="care-grid">
+            <div class="care-item">
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock technical assistance</p>
+            </div>
+            <div class="care-item">
+                <h3>Compliance Assistance</h3>
+                <p>Regulatory guidance and support</p>
+            </div>
+            <div class="care-item">
+                <h3>Training Programs</h3>
+                <p>Employee upskilling initiatives</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="quantum-footer-container">
+        <div class="quantum-footer-background"></div>
+        
+        <!-- Decorative Particles -->
+        <div class="quantum-particle" style="top: 10%; left: 5%; width: 50px; height: 50px;"></div>
+        <div class="quantum-particle" style="top: 50%; right: 10%; width: 30px; height: 30px;"></div>
+        <div class="quantum-particle" style="bottom: 20%; left: 15%; width: 40px; height: 40px;"></div>
+
+        <div class="quantum-footer-grid">
+            <!-- Company Info Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Think-Tap Research Incorporated</h3>
+                <p>Innovating technology with passion and precision. Transforming ideas into digital realities.</p>
+                <div class="quantum-social-links">
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Quick Links</h3>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Home
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Services
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Portfolio
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Contact
+                </a>
+            </div>
+
+            <!-- Services Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Our Services</h3>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> CREATIVE WRITING AND DESIGNS
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Brand Promotion and Creative Designs
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> IT Solutions
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Corporate Research Services
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> RESEARCH CONSULTANCY
+                </a>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest tech insights.</p>
+                <form class="quantum-newsletter">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="quantum-newsletter-input" 
+                        required
+                    >
+                    <button type="submit" class="quantum-newsletter-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="quantum-footer-copyright">
+            © 2025 Think-Tap  Research Incorporated. All Rights Reserved. 
+            <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Privacy Policy</a>
+            <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        // Add Prison Break themed interactions
+        document.querySelectorAll('.blueprint-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'rotate(1deg) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'none';
+            });
+        });
+
+        // Animated progress bars
+        const layers = document.querySelectorAll('.security-layer');
+        layers.forEach((layer, index) => {
+            layer.style.transform = `translateX(${index * 20}px)`;
+            layer.style.transition = 'transform 0.3s ease';
+        });
+    </script>
+</body>
+</html>

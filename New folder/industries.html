@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve | TechSolutions Inc.</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="service.css">
+    <script src="navbar.js"></script>
+    <script src="service.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fdef60c69.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        .industries-hero {
+            background: linear-gradient(135deg, #4098bd, #7597de);
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container3 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title3 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #2b1055;
+            text-align: center;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .industry-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .industry-icon {
+            font-size: 2.5rem;
+            color: #6c63ff;
+            margin-bottom: 20px;
+        }
+
+        .industry-title {
+            font-size: 1.5rem;
+            color: #2b1055;
+            margin-bottom: 15px;
+        }
+
+        .industry-description {
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+
+        .key-services {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        .key-services li {
+            position: relative;
+            margin-bottom: 8px;
+            padding-left: 25px;
+        }
+
+        .key-services li:before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: #6c63ff;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .industries-hero {
+                padding: 60px 20px;
+            }
+        }
+
+
+        :root {
+            --primary: #6C63FF;
+            --secondary: #00B4D8;
+            --accent: #FF6B6B;
+        }
+
+        .fox-river {
+  
+    padding: 2rem;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.michael-scofield {
+    color: #00B4D8;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: #262626;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255,102,0,0.5);
+}
+
+.service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Prison Break Character Theme Colors */
+.sara-tancredi { border-left: 4px solid #4CAF50; }
+.theodore-bagwell { border-left: 4px solid #F44336; }
+.fernando-sucre { border-left: 4px solid #2196F3; }
+.brad-bellick { border-left: 4px solid #FFC107; }
+.john-abruzzi { border-left: 4px solid #9C27B0; }
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* New Creative Styles */
+.mission-statement {
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+}
+
+.michael-tattoo {
+    background: linear-gradient(45deg, #2db3df 0%, #6996da 100%);
+    padding: 2rem;
+    border-radius: 0px;
+   
+}
+
+.scofield-plan {
+    background: #ffffff;
+    color: rgb(24, 87, 212);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scofield-plan:hover {
+    background: #071d41;
+    letter-spacing: 2px;
+}
+
+.hidden {
+    display: none;
+    margin-top: 1rem;
+    color: #000000;
+}
+
+.escape-plan-progress {
+    max-width: 800px;
+    margin: 3rem auto;
+}
+
+.fox-river-wall {
+    
+    height: 15px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6600 0%, #ff9933 100%);
+    transition: width 1s ease;
+}
+
+.plan-steps {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+}
+
+.step {
+    color: #666;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.step.active {
+    color: #187eb9;
+    font-weight: bold;
+}
+
+.dynamic-tagline {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.typing-effect {
+    color: #1f83ad;
+    border-right: 2px solid;
+    animation: typing 1s steps(40) infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+.testimonial-carousel {
+    background: #262626;
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 3rem auto;
+    max-width: 600px;
+}
+
+.mugshot {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ff6600;
+    margin: 0 auto 1rem;
+}
+
+.inmate-number {
+    color: #ff6600;
+    display: block;
+    text-align: center;
+    font-size: 0.8rem;
+}
+</style>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>
+            <a href="https://twitter.com/Think-Tap Inc " target="_blank">Twitter</a>
+        </span>
+        <span> | </span>
+        <span>
+            <a href="https://facebook.com/thinktap_research " target="_blank">Facebook</a>
+        </span>
+        <span> | </span>
+        <span>+233059370 5374, +2330592219725, +447513246760</span>
+        <span> | </span>
+        <span>thinktapresearch@gmail.com</span>
+    </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/project img/IMG_3168.JPG" alt="IT Consult Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/research.con.html">Research Consultancy </a></li>
+                    <li><a href="/brand.html">Brand Promotion and creative designs </a></li>
+                
+                    <li><a href="/write.html">Creative Write-ups and Design</a></li>
+                    <li><a href="/assig.html">Assignment Guidance</a></li>
+                </ul>
+            </li>
+            <li >
+                <a href="/industries.html">Industries</a>
+                <ul class="dropdown-menu">
+                    
+                </ul>
+            </li>
+         
+            <li >
+                <a href="/tech.html">Technologies</a>
+                
+            </li>
+            <li><a href="contact.html#contact-section" class="contact">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+     <!-- Hero Section -->
+     <section class="hero">
+        <div class="hero-content">
+            <h1 >IT Solutions <br> </h1>
+            <p style="font-style: normal;">Your Partner for Digital Success</p>
+            <p style="line-height: 20px; font-size: 13px; font-style: italic; color: rgb(255, 255, 255);">We specialize in academic research consultancy, offering guidance from diploma projects to PhD thesis development and networking and security management, web development, IT system monitoring, remote server administration, software development, and database management.</p>
+            <div class="buttons">
+                <a href="index.html#contact-section">
+                    <button class="btn talk">Talk to our team</button>
+                </a>
+                
+                <a href="index.html#contact-section">
+                    <button class="btn quote">Get a quote</button>
+                </a>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <img src="/images/Online learning-amico.png" alt="Digital Transformation Animation">
+        </div>
+    
+    </section>
+
+
+
+    <section class="industries-hero">
+        <div class="container3">
+            <h1>Industries We Empower</h1>
+            <p>Delivering tailored IT solutions for sector-specific challenges</p>
+        </div>
+    </section>
+
+    <div class="container3">
+        <h2 class="section-title3">Our Industry Expertise</h2>
+        
+        <div class="industries-grid">
+            <!-- Healthcare -->
+            <div class="industry-card">
+                <i class="industry-icon fas fa-hospital"></i>
+                <h3 class="industry-title">Healthcare</h3>
+                <p class="industry-description">Transforming patient care through digital health solutions and secure health data management.</p>
+                <ul class="key-services">
+                    <li>EHR/EMR Systems</li>
+                    <li>Telemedicine Platforms</li>
+                    <li>Health Analytics</li>
+                    <li>HIPAA Compliance</li>
+                </ul>
+            </div>
+
+            <!-- Banking & Finance -->
+            <div class="industry-card">
+                <i class="industry-icon fas fa-coins"></i>
+                <h3 class="industry-title">Banking & Finance</h3>
+                <p class="industry-description">Modernizing financial services with secure fintech solutions and regulatory compliance.</p>
+                <ul class="key-services">
+                    <li>Core Banking Systems</li>
+                    <li>Fraud Detection</li>
+                    <li>Payment Gateways</li>
+                    <li>Blockchain Solutions</li>
+                </ul>
+            </div>
+
+            <!-- Retail -->
+            <div class="industry-card">
+                <i class="industry-icon fas fa-shopping-cart"></i>
+                <h3 class="industry-title">Retail & E-commerce</h3>
+                <p class="industry-description">Driving digital transformation in commerce with omnichannel solutions.</p>
+                <ul class="key-services">
+                    <li>E-commerce Platforms</li>
+                    <li>Inventory Management</li>
+                    <li>Customer Analytics</li>
+                    <li>AR Shopping Experiences</li>
+                </ul>
+            </div>
+
+            <!-- Manufacturing -->
+            <div class="industry-card">
+                <i class="industry-icon fas fa-industry"></i>
+                <h3 class="industry-title">Manufacturing</h3>
+                <p class="industry-description">Optimizing production through Industry 4.0 technologies and smart automation.</p>
+                <ul class="key-services">
+                    <li>IIoT Solutions</li>
+                    <li>Predictive Maintenance</li>
+                    <li>Supply Chain Analytics</li>
+                    <li>Digital Twins</li>
+                </ul>
+            </div>
+
+            <!-- Telecom -->
+            <div class="industry-card">
+                <i class="industry-icon fas fa-satellite-dish"></i>
+                <h3 class="industry-title">Telecommunications</h3>
+                <p class="industry-description">Enabling next-gen connectivity solutions and network optimization.</p>
+                <ul class="key-services">
+                    <li>5G Solutions</li>
+                    <li>Network Management</li>
+                    <li>IoT Connectivity</li>
+                    <li>Customer Experience Platforms</li>
+                </ul>
+            </div>
+
+            <!-- Logistics -->
+            <div class="industry-card">
+                <i class="industry-icon fas fa-shipping-fast"></i>
+                <h3 class="industry-title">Logistics & Transportation</h3>
+                <p class="industry-description">Streamlining operations through intelligent logistics solutions.</p>
+                <ul class="key-services">
+                    <li>Fleet Management</li>
+                    <li>Route Optimization</li>
+                    <li>Smart Warehousing</li>
+                    <li>Delivery Automation</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="company-services fox-river">
+        <h2 class="michael-scofield">Breaking Boundaries in Industry Service</h2>
+        <div class="services-container lincoln-burrows">
+            <div class="service-card sara-tancredi" onmouseover="activateHover(this)">
+                <img src="/images/image/pexels-kevin-ku-92347-577585.jpg" alt="Research Consultancy">
+                <h3>RESEARCH CONSULTANCY</h3>
+                <p>Escaping the ordinary through meticulous data analysis</p>
+            </div>
+    
+           
+            <div class="service-card fernando-sucre" onmouseover="activateHover(this)">
+                <img src="/images/image/pexels-pixabay-39284.jpg" alt="IT Solutions">
+                <h3>IT SOLUTIONS</h3>
+                <p>Engineering digital escape routes for your business</p>
+            </div>
+    
+            <div class="service-card brad-bellick" onmouseover="activateHover(this)">
+                <img src="/images/image/pexels-shvetsa-3987020.jpg" alt="Creative Services">
+                <h3>CREATIVE WRITING & DESIGNS</h3>
+                <p>Cell-breaking visual and textual solutions</p>
+            </div>
+    
+            <div class="service-card john-abruzzi" onmouseover="activateHover(this)">
+                <img src="/images/image/pexels-kevin-ku-92347-577585.jpg" alt="Assignment Guidance">
+                <h3>ASSIGNMENT GUIDANCE</h3>
+                <p>Mastermind-level academic strategies</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this after the services section -->
+<div class="prison-break-extras">
+    <!-- Interactive Mission Statement -->
+    <div class="mission-statement michael-tattoo">
+        <button class="scofield-plan" onclick="revealPlan()">Decrypt Our Mission</button>
+        <p id="hiddenMission" class="hidden">About Us – Think-Tap Research Incorporated
+            For over eight years, Think-Tap Research Incorporated has been a trusted name in research consultancy, IT solutions, creative writing, and branding services. </p>
+    </div>
+
+    <!-- Animated Escape Plan Progress -->
+    <div class="escape-plan-progress">
+        <div class="progress-bar fox-river-wall">
+            <div class="progress-fill linc-escape" style="width: 0%"></div>
+        </div>
+        <div class="plan-steps">
+            <span class="step active" data-width="20%">Client Briefing</span>
+            <span class="step" data-width="40%">Strategy Development</span>
+            <span class="step" data-width="60%">Operation Execution</span>
+            <span class="step" data-width="80%">Quality Assurance</span>
+            <span class="step" data-width="100%">Mission Success</span>
+        </div>
+    </div>
+
+    <!-- Dynamic Tagline -->
+    <div class="dynamic-tagline">
+        <h2 class="company-motto">We Help You 
+            <span class="typing-effect" data-words="Escape Mediocrity|Break Barriers|Outsmart Competition|Engineer Success|Evolve Strategically"></span>
+        </h2>
+    </div>
+
+    <!-- Prison Break Testimonials Carousel -->
+    <div class="testimonial-carousel company-files">
+        <div class="testimonial inmate-profile active">
+            <img src="/images/image/pexels-kevin-ku-92347-577585.jpg" alt="Client Testimonial" class="mugshot">
+            <p>"Their IT solutions helped us break out of legacy systems like it was Fox River!"</p>
+            <span class="inmate-number"></span>
+        </div>
+        <!-- Add more testimonials -->
+    </div>
+</div>
+
+
+<footer class="quantum-footer-container">
+    <div class="quantum-footer-background"></div>
+    
+    <!-- Decorative Particles -->
+    <div class="quantum-particle" style="top: 10%; left: 5%; width: 50px; height: 50px;"></div>
+    <div class="quantum-particle" style="top: 50%; right: 10%; width: 30px; height: 30px;"></div>
+    <div class="quantum-particle" style="bottom: 20%; left: 15%; width: 40px; height: 40px;"></div>
+
+    <div class="quantum-footer-grid">
+        <!-- Company Info Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Think-Tap Research Incorporated</h3>
+            <p>Innovating technology with passion and precision. Transforming ideas into digital realities.</p>
+            <div class="quantum-social-links">
+                <a href="#" class="quantum-social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Quick Links</h3>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Home
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Services
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Portfolio
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Contact
+            </a>
+        </div>
+
+        <!-- Services Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Our Services</h3>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> CREATIVE WRITING AND DESIGNS
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Brand Promotion and Creative Designs
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> IT Solutions
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Corporate Research Services
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> RESEARCH CONSULTANCY
+            </a>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Stay Updated</h3>
+            <p>Subscribe to our newsletter for the latest tech insights.</p>
+            <form class="quantum-newsletter">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="quantum-newsletter-input" 
+                    required
+                >
+                <button type="submit" class="quantum-newsletter-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="quantum-footer-copyright">
+        © 2025 Think-Tap  Research Incorporated. All Rights Reserved. 
+        <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Privacy Policy</a>
+        <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Terms of Service</a>
+    </div>
+</footer>
+
+
+    
+</body>
+
+<script>
+    function activateHover(element) {
+        
+        const characterClass = Array.from(element.classList).find(cls => cls in characters);
+        if (characterClass) {
+            const img = element.querySelector('img');
+            const originalSrc = img.src;
+            img.src = characters[characterClass];
+            
+            img.addEventListener('mouseout', () => {
+                img.src = originalSrc;
+            }, {once: true});
+        }
+    }
+
+
+
+
+    // Interactive Mission Reveal
+function revealPlan() {
+    const mission = document.getElementById('hiddenMission');
+    const button = document.querySelector('.scofield-plan');
+    mission.style.display = 'block';
+    button.style.display = 'none';
+    mission.style.animation = 'tattooReveal 1.5s ease';
+}
+
+// Animated Progress Bar
+document.addEventListener('DOMContentLoaded', () => {
+    const steps = document.querySelectorAll('.step');
+    const progressFill = document.querySelector('.progress-fill');
+    
+    steps.forEach((step, index) => {
+        setTimeout(() => {
+            step.classList.add('active');
+            progressFill.style.width = step.dataset.width;
+        }, index * 1500);
+    });
+
+    // Dynamic Typing Effect
+    const typingElement = document.querySelector('.typing-effect');
+    const words = typingElement.dataset.words.split('|');
+    let wordIndex = 0;
+    
+    function typeWord() {
+        typingElement.textContent = words[wordIndex];
+        wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeWord, 3000);
+    }
+    typeWord();
+});
+
+// Add parallax effect on scroll
+window.addEventListener('scroll', () => {
+    const mission = document.querySelector('.mission-statement');
+    const scrolled = window.pageYOffset;
+    mission.style.transform = `translateY(${scrolled * 0.2}px)`;
+});
+
+    </script>
+    
+</html>

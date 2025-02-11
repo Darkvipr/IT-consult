@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About ScienceSoft</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="service.css">
+    <script src="navbar.js"></script>
+    <script src="service.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fdef60c69.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        .split-container {
+            display: flex;
+            min-height: 100vh;
+            background: #f8f9fa;
+            margin-top: 60px;
+        }
+
+        .content-left {
+            flex: 1;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            animation: fadeInLeft 1s ease-out;
+            margin-top: -50px;
+        }
+
+        .content-right {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #4a90e2;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #4a90e2;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .slider {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-controls {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: #fff;
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .split-container {
+                flex-direction: column;
+            }
+
+            .content-left {
+                padding: 2rem;
+            }
+
+            .content-right {
+                height: 400px;
+            }
+        }
+
+        .banana-toast {
+            
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-family: Arial, sans-serif;
+            font-weight:  normal;
+            color: #4a90e2;
+            margin-top: 30px;
+        }
+
+        .container11 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 70px;
+        }
+        .text-block {
+            max-width: 300px;
+            font-size: 1rem;
+            color: #333;
+        }
+        .image-container {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0px;
+            object-fit: cover;
+        }
+        .card {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: white;
+            color: #222;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    
+        .container5 {
+            max-width: 1400px;
+            margin: 0 auto;
+           
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 3rem;
+           
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #4a90e2;
+            margin-bottom: 1.5rem;
+      
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: #4a5568;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .regions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .region-card {
+           
+            border-radius: 20px;
+            padding: 2rem;
+          
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .region-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, #4a90e2, #805ad5);
+        }
+
+        .region-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .region-title {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .region-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-group {
+            margin: 1.5rem 0;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        .client-count {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 2px dashed #e2e8f0;
+            font-size: 1.1rem;
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1024px) {
+            .regions-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .regions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .highlight {
+            color: #4a90e2;
+            font-weight: 600;
+        }
+
+        
+.industries-section {
+ 
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.industry-card {
+  
+ 
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.industry-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.industry-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #3498db;
+}
+
+.industry-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.industry-description {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+.success-guarantee {
+ 
+ 
+  
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.practices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.practice-card {
+ 
+ 
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.practice-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.practice-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #3498db;
+}
+
+.practice-title {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.practice-description {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .practices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .practices-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trust-section {
+  background: white;
+ 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.trust-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.trust-image img {
+  width: 100%;
+  max-width: 400px;
+ 
+  
+}
+
+.trust-text {
+  flex: 1;
+  text-align: right;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #4a90e2;
+  margin-bottom: 20px;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #20b9c4;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .trust-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trust-text {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+}
+
+.money-talk {
+  background: white;
+  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.cash-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.show-me-the-money {
+  font-size: 2.5rem;
+  color: #1db1d6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.money-explainer {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.price-party {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.price-bubble {
+  
+  
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.price-bubble:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.price-tag {
+  font-size: 1.5rem;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.price-details {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .price-party {
+    grid-template-columns: 1fr;
+  }
+
+  .show-me-the-money {
+    font-size: 2rem;
+  }
+
+  .money-explainer {
+    font-size: 1rem;
+  }
+}
+
+.lets-grow-together {
+  background: linear-gradient(135deg, #fff9c4, #fff59d); /* Light yellow gradient */
+ 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 1400px;
+  width: 100%;
+}
+
+.growth-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.image-and-text {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.picture-this img {
+  width: 100%;
+  max-width: 400px;
+ 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.words-of-wisdom {
+  flex: 1;
+}
+
+.big-question {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.wise-words {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.lets-chat-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.lets-chat-button:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image-and-text {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .big-question {
+    font-size: 2rem;
+  }
+
+  .wise-words {
+    font-size: 1rem;
+  }
+}
+    </style>
+</head>
+<body>
+     <!-- Top Bar -->
+     <div class="top-bar">
+        <span>
+            <a href="https://twitter.com/Think-Tap Inc " target="_blank">Twitter</a>
+        </span>
+        <span> | </span>
+        <span>
+            <a href="https://facebook.com/thinktap_research " target="_blank">Facebook</a>
+        </span>
+        <span> | </span>
+        <span>+233059370 5374, +2330592219725, +447513246760</span>
+        <span> | </span>
+        <span>thinktapresearch@gmail.com</span>
+    </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/project img/IMG_3168.JPG" alt="IT Consult Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/research.con.html">Research Consultancy </a></li>
+                    <li><a href="/brand.html">Brand Promotion and creative designs </a></li>
+                    <li><a href="/IT.html">IT Solutions</a></li>
+                    <li><a href="/write.html">Creative Write-ups and Design</a></li>
+                    <li><a href="/assig.html">Assignment Guidance</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/industries.html">Industries</a>
+                
+            </li>
+           
+            <li >
+                <a href="/tech.html">Technologies</a>
+                
+            </li>
+            <li><a href="contact.html#contact-section" class="contact">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+    <div class="split-container">
+        <div class="content-left">
+            <div class="subtitle">About Think-Tap Research Incorporated</div>
+            <h1>Your Partner for Project Success</h1>
+            <p class="description">
+                Founded in 2017, Think-Tap Research Incorporated, doing business as Think-Tap Research Incorporated, provides IT consulting and software development services. Clients respect us for unfailing budget and time control, cooperation transparency, and consistently high service quality.
+            </p>
+        </div>
+        <div class="content-right">
+            <div class="slider">
+                <div class="slide active">
+                    <img src="/images/image/pexels-shvetsa-3987020.jpg" alt="ScienceSoft Office">
+                </div>
+                <div class="slide">
+                    <img src="/images/image/pexels-kevin-ku-92347-577585.jpg" alt="Team Collaboration">
+                </div>
+                <div class="slide">
+                    <img src="/images/image/pexels-pixabay-39284.jpg" alt="Project Development">
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="banana-toast">
+        Think-Tap Research Incorporated
+    </div>
+
+    <div class="container11">
+        <div class="image-container">
+            <img src="/images/image/pexels-shvetsa-3987020.jpg" alt="Placeholder Image">
+            <div class="card">4444+</div>
+        </div>
+
+        <div class="text-block">
+            <strong>IT professionals</strong><br>
+            Think-Tap Research Incorporated is a fully stacked team of IT professionals, from software engineers and IT consultants to data scientists and cybersecurity engineers, who ensure we can deliver end-to-end digital initiatives of any complexity. Over 50% of our talent pool are senior-level experts.
+        </div>
+    </div>
+     
+    <div class="container5">
+        <div class="title-section">
+            <h1>Our Geography</h1>
+            <p class="intro-text">
+                <span class="highlight">Headquartered in the US and operating internationally</span>, 
+                our team drives digital transformation for businesses globally. We ensure on-site presence 
+                to deliver services to our <span class="highlight">major target markets</span> in:
+            </p>
+        </div>
+
+        <div class="regions-grid">
+            <!-- North America Card -->
+            <div class="region-card">
+                <div class="region-icon">🌎</div>
+                <h2 class="region-title">North America</h2>
+                <div class="info-group">
+                    <div class="info-label">Office Locations</div>
+                    <div class="info-value">USA, Mexico</div>
+                </div>
+                <div class="client-count">
+                    ~510 Clients
+                </div>
+            </div>
+
+            <!-- Europe and UK Card -->
+            <div class="region-card">
+                <div class="region-icon">🌍</div>
+                <h2 class="region-title">Europe and the UK</h2>
+                <div class="info-group">
+                    <div class="info-label">Office Locations</div>
+                    <div class="info-value">Finland, Latvia, Lithuania, Poland</div>
+                </div>
+                <div class="client-count">
+                    ~360 Clients
+                </div>
+            </div>
+
+            <!-- The Gulf Card -->
+            <div class="region-card">
+                <div class="region-icon">🌏</div>
+                <h2 class="region-title">The Gulf</h2>
+                <div class="info-group">
+                    <div class="info-label">Office Locations</div>
+                    <div class="info-value">KSA, UAE</div>
+                </div>
+                <div class="client-count">
+                    ~50 Clients
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="industries-section">
+        <h2 style="color: #4a90e2;" class="section-title">Industries Think-Tap Research Incorporated  Serves</h2>
+        <p style="color: #4a90e2;" class="section-description">
+          We provide cutting-edge solutions tailored to meet the unique needs of various industries.
+        </p>
+        <div class="industries-grid">
+          <div class="industry-card">
+            <div class="industry-icon">💻</div>
+            <h3 class="industry-title">Technology</h3>
+            <p class="industry-description">
+              Delivering innovative software solutions for tech companies to stay ahead in the digital race.
+            </p>
+          </div>
+          <div class="industry-card">
+            <div class="industry-icon">🏥</div>
+            <h3 class="industry-title">Healthcare</h3>
+            <p class="industry-description">
+              Empowering healthcare providers with advanced tools for better patient care and operational efficiency.
+            </p>
+          </div>
+          <div class="industry-card">
+            <div class="industry-icon">🏦</div>
+            <h3 class="industry-title">Finance</h3>
+            <p class="industry-description">
+              Enabling financial institutions to streamline operations and enhance customer experiences.
+            </p>
+          </div>
+        </div>
+      </section>
+    
+      <section class="success-guarantee">
+        <div class="container">
+          <h2 style="color: #4a90e2;" class="section-title">What We Do to Guarantee Project Success</h2>
+          <p style="color: #4a90e2;" class="section-description">
+            At ScienceSoft, we see our mission in driving project success no matter what. These are not just ambitious words — we use a set of practices and techniques to keep projects on track and deliver on our commitments despite any possible obstacles.
+          </p>
+          <div class="practices-grid">
+            <div class="practice-card">
+              <div class="practice-icon">📊</div>
+              <h3 class="practice-title">Strategic Planning</h3>
+              <p class="practice-description">
+                We create detailed project plans to ensure every step is aligned with your goals.
+              </p>
+            </div>
+            <div class="practice-card">
+              <div class="practice-icon">🔍</div>
+              <h3 class="practice-title">Risk Management</h3>
+              <p class="practice-description">
+                Proactively identify and mitigate risks to keep your project on track.
+              </p>
+            </div>
+            <div class="practice-card">
+              <div class="practice-icon">🤝</div>
+              <h3 class="practice-title">Client Collaboration</h3>
+              <p class="practice-description">
+                We work closely with you to ensure your vision is realized at every stage.
+              </p>
+            </div>
+            <div class="practice-card">
+              <div class="practice-icon">⚙️</div>
+              <h3 class="practice-title">Agile Methodology</h3>
+              <p class="practice-description">
+                Adapt quickly to changes and deliver incremental value throughout the project.
+              </p>
+            </div>
+            <div class="practice-card">
+              <div class="practice-icon">📈</div>
+              <h3 class="practice-title">Performance Monitoring</h3>
+              <p class="practice-description">
+                Continuously track progress and optimize processes for better results.
+              </p>
+            </div>
+            <div class="practice-card">
+              <div class="practice-icon">✅</div>
+              <h3 class="practice-title">Quality Assurance</h3>
+              <p class="practice-description">
+                Rigorous testing ensures the final product meets the highest standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <section class="trust-section">
+        <div class="container">
+          <div class="trust-content">
+            <div class="trust-image">
+              <img src="/images/image/pexels-olia-danilevich-4974922.jpg" alt="Transparency Image">
+            </div>
+            <div class="trust-text">
+              <h2 class="section-title">Building Trust with Transparency</h2>
+              <p class="section-description">
+                Outsourcing to another company, however reputable it is, always comes with a risk. The best we can do as a vendor to lower that risk is to be completely transparent about who we are, what we do, and where we have succeeded. At ScienceSoft, we bet on facts rather than promises — that’s our first step to building trust.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="money-talk">
+        <div class="cash-container">
+          <h2 class="show-me-the-money">Our Pricing Policy</h2>
+          <p style="color: #4a90e2;" class="money-explainer">
+            Depending on a project and the nature of the delivered service, we resort to one of the following pricing models:
+          </p>
+          <div class="price-party">
+            <div class="price-bubble">
+              <h3 class="price-tag">Fixed Price</h3>
+              <p class="price-details">
+                Recommended for middle-size projects, where the scope of the project is clearly defined.
+              </p>
+            </div>
+            <div class="price-bubble">
+              <h3 class="price-tag">Time and Material</h3>
+              <p class="price-details">
+                Recommended for middle-size and large projects, and for consulting, which are dynamic and need fluidity.
+              </p>
+            </div>
+            <div class="price-bubble">
+              <h3 class="price-tag">Consumption-based Pricing</h3>
+              <p class="price-details">
+                Used for managed services and help desk (e.g. # of tickets solved, cloud resources consumed).
+              </p>
+            </div>
+            <div class="price-bubble">
+              <h3 class="price-tag">Monthly Subscription Fee</h3>
+              <p class="price-details">
+                Used for support services.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="lets-grow-together">
+      <div class="growth-container">
+        <div class="image-and-text">
+          <div class="picture-this">
+            <img src="/images/image/pexels-olia-danilevich-4974922.jpg" alt="Business Growth Image">
+          </div>
+          <div class="words-of-wisdom">
+            <h2 class="big-question">Looking for a Partner to Support Your Business Growth or Monetize Your Idea?</h2>
+            <p class="wise-words">
+              We’re here to help you achieve your goals. Whether you’re looking to grow your business or bring your idea to life, our team is ready to support you every step of the way.
+            </p>
+            <a href="#contact" class="lets-chat-button">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <footer class="quantum-footer-container">
+        <div class="quantum-footer-background"></div>
+        
+        <!-- Decorative Particles -->
+        <div class="quantum-particle" style="top: 10%; left: 5%; width: 50px; height: 50px;"></div>
+        <div class="quantum-particle" style="top: 50%; right: 10%; width: 30px; height: 30px;"></div>
+        <div class="quantum-particle" style="bottom: 20%; left: 15%; width: 40px; height: 40px;"></div>
+
+        <div class="quantum-footer-grid">
+            <!-- Company Info Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Think-Tap Research Incorporated</h3>
+                <p>Innovating technology with passion and precision. Transforming ideas into digital realities.</p>
+                <div class="quantum-social-links">
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="quantum-social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Quick Links</h3>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Home
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Services
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Portfolio
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Contact
+                </a>
+            </div>
+
+            <!-- Services Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Our Services</h3>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> CREATIVE WRITING AND DESIGNS
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Brand Promotion and Creative Designs
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> IT Solutions
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> Corporate Research Services
+                </a>
+                <a href="#" class="quantum-footer-link">
+                    <i class="fas fa-chevron-right"></i> RESEARCH CONSULTANCY
+                </a>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="quantum-footer-column">
+                <h3 class="quantum-footer-title">Stay Updated</h3>
+                <p>Subscribe to our newsletter for the latest tech insights.</p>
+                <form class="quantum-newsletter">
+                    <input 
+                        type="email" 
+                        placeholder="Enter your email" 
+                        class="quantum-newsletter-input" 
+                        required
+                    >
+                    <button type="submit" class="quantum-newsletter-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="quantum-footer-copyright">
+            © 2025 Think-Tap  Research Incorporated. All Rights Reserved. 
+            <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Privacy Policy</a>
+            <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Terms of Service</a>
+        </div>
+    </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Auto advance slides
+        setInterval(nextSlide, 5000);
+
+        const cards = document.querySelectorAll('.region-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

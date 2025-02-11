@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment Guidance</title>
+  <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="service.css">
+    <script src="navbar.js"></script>
+    <script src="service.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/validator/13.6.0/validator.min.js"></script>
+    <script src="https://kit.fontawesome.com/9fdef60c69.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>
+            <a href="https://twitter.com/Think-Tap Inc " target="_blank">Twitter</a>
+        </span>
+        <span> | </span>
+        <span>
+            <a href="https://facebook.com/thinktap_research " target="_blank">Facebook</a>
+        </span>
+        <span> | </span>
+        <span>+233059370 5374, +2330592219725, +447513246760</span>
+        <span> | </span>
+        <span>thinktapresearch@gmail.com</span>
+    </div>
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/images/project img/IMG_3168.JPG" alt="IT Consult Logo">
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/research.con.html">Research Consultancy </a></li>
+                    <li><a href="/brand.html">Brand Promotion and creative designs </a></li>
+                    <li><a href="/IT.html">IT Solutions</a></li>
+                    <li><a href="/write.html">Creative Write-ups and Design</a></li>
+                    
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/industries.html">Industries</a>
+                
+            </li>
+            
+            <li >
+                <a href="/tech.html">Technologies</a>
+                
+            </li>
+            <li><a href="contact.html#contact-section" class="contact">Contact Us</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 >ASSIGNMENT GUIDANCE <br> </h1>
+            <p style="font-style: normal;">Your Partner for Digital Success</p>
+            <p style="line-height: 20px; font-size: 13px; font-style: italic; color: rgb(255, 255, 255);">We specialize in academic research consultancy, offering guidance from diploma projects to PhD thesis development and networking and security management, web development, IT system monitoring, remote server administration, software development, and database management.</p>
+            <div class="buttons">
+                <a href="index.html#contact-section">
+                    <button class="btn talk">Talk to our team</button>
+                </a>
+                
+                <a href="index.html#contact-section">
+                    <button class="btn quote">Get a quote</button>
+                </a>
+            </div>
+        </div>
+        <div class="hero-animation">
+            <img src="/images/Online learning-amico.png" alt="Digital Transformation Animation">
+        </div>
+    
+    </section>
+ 
+
+
+  <section class="assignment-guidance">
+    <div class="guidance-container">
+      <h2 class="section-title1">Assignment Guidance</h2>
+      <p class="section-description1">
+        We specialize in academic research consultancy, offering guidance from diploma projects to PhD thesis development.
+      </p>
+      <div class="upload-section">
+        <div class="upload-box">
+          <input type="file" id="file-upload" accept=".pdf,.doc,.docx" hidden />
+          <label for="file-upload" class="upload-label">
+            <span class="upload-icon">📄</span>
+            <span class="upload-text">Attach PDF/Word Document</span>
+            <span class="upload-hint">(Max file size: 5MB)</span>
+          </label>
+          <p class="file-name" id="file-name">No file chosen</p>
+        </div>
+        <button class="submit-btn" id="submit-btn">Submit</button>
+      </div>
+      
+    </div>
+  </section>
+
+  <footer class="quantum-footer-container">
+    <div class="quantum-footer-background"></div>
+    
+    <!-- Decorative Particles -->
+    <div class="quantum-particle" style="top: 10%; left: 5%; width: 50px; height: 50px;"></div>
+    <div class="quantum-particle" style="top: 50%; right: 10%; width: 30px; height: 30px;"></div>
+    <div class="quantum-particle" style="bottom: 20%; left: 15%; width: 40px; height: 40px;"></div>
+
+    <div class="quantum-footer-grid">
+        <!-- Company Info Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Think-Tap Research Incorporated</h3>
+            <p>Innovating technology with passion and precision. Transforming ideas into digital realities.</p>
+            <div class="quantum-social-links">
+                <a href="#" class="quantum-social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-github"></i></a>
+                <a href="#" class="quantum-social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Quick Links</h3>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Home
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Services
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Portfolio
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Contact
+            </a>
+        </div>
+
+        <!-- Services Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Our Services</h3>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> CREATIVE WRITING AND DESIGNS
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Brand Promotion and Creative Designs
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> IT Solutions
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> Corporate Research Services
+            </a>
+            <a href="#" class="quantum-footer-link">
+                <i class="fas fa-chevron-right"></i> RESEARCH CONSULTANCY
+            </a>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="quantum-footer-column">
+            <h3 class="quantum-footer-title">Stay Updated</h3>
+            <p>Subscribe to our newsletter for the latest tech insights.</p>
+            <form class="quantum-newsletter">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="quantum-newsletter-input" 
+                    required
+                >
+                <button type="submit" class="quantum-newsletter-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="quantum-footer-copyright">
+        © 2025 Think-Tap  Research Incorporated. All Rights Reserved. 
+        <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Privacy Policy</a>
+        <a href="#" style="color: var(--secondary-color); margin-left: 10px;">Terms of Service</a>
+    </div>
+</footer>
+
+
+  <style>
+    /* General Styles */
+
+    .assignment-guidance {
+        
+        border-radius: 20px;
+       
+        padding: 40px;
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto; /* Center the element */
+    }
+
+.section-title1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.section-description1 {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+}
+
+
+.upload-section {
+  margin-bottom: 30px;
+}
+
+.upload-box {
+  border: 2px dashed #3498db;
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-box:hover {
+  background: #f0f8ff;
+  border-color: #2980b9;
+}
+
+.upload-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.upload-icon {
+  font-size: 2.5rem;
+  color: #3498db;
+}
+
+.upload-text {
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.upload-hint {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.submit-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.text-input textarea {
+  width: 100%;
+  height: 150px;
+  padding: 15px;
+  border: 2px solid #3498db;
+  border-radius: 15px;
+  font-size: 1rem;
+  color: #2c3e50;
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+.text-input textarea:focus {
+  border-color: #2980b9;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .upload-text {
+    font-size: 1rem;
+  }
+}
+
+  </style>
+
+  <script>
+
+    // File Upload Functionality
+const fileUpload = document.getElementById('file-upload');
+const fileNameDisplay = document.getElementById('file-name');
+const submitBtn = document.getElementById('submit-btn');
+
+fileUpload.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    fileNameDisplay.textContent = file.name;
+    fileNameDisplay.style.color = '#2c3e50';
+  } else {
+    fileNameDisplay.textContent = 'No file chosen';
+    fileNameDisplay.style.color = '#7f8c8d';
+  }
+});
+
+// Submit Button Functionality
+submitBtn.addEventListener('click', () => {
+  const file = fileUpload.files[0];
+  const textInput = document.getElementById('text-input').value;
+
+  if (file || textInput) {
+    alert('Your submission has been received!');
+    fileUpload.value = '';
+    fileNameDisplay.textContent = 'No file chosen';
+    fileNameDisplay.style.color = '#7f8c8d';
+    document.getElementById('text-input').value = '';
+  } else {
+    alert('Please attach a file or add text before submitting.');
+  }
+});
+  </script>
+</body>
+</html>
